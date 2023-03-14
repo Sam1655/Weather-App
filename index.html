@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+
+            <h1>Weather App</h1>
+
+            <div class="ui-tabSwitch">
+                <p class="yourWeather">Your Weather</p>
+                <p class="searchWeather currentTab">Search Weather</p>
+            </div>
+
+            <!-- grant location container-->
+            <div class="grant-location-container hidden">
+                <img src="./assets/location.png" width="80" height="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow Access to get weather Information</p>
+                <button class="grantBtn" data-grantAccess>Grant Access</button>
+            </div>
+            
+            <div class="ui-searchBox">
+                <form class="form" data-searchForm>
+                    <input data-searchInput type="text" class="searchBox" placeholder="Search for City...">
+                    <button class="searchBtn" type="submit">
+                        <img src="assets/search.png" alt="" width="20px" height="20px">
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Loading Screen -->
+            <div class="loadingScreen hidden">
+                <img src="/assets/loading.gif" alt="" width="150px" height="150px" loading="lazy">
+                <p>LOADING...</p>
+            </div>
+
+            <!-- Error Screen -->
+            <div class="errorScreen hidden">
+                <img src="/assets/not-found.png" width="150px" height="150px" loading="lazy">
+            </div>
+
+            <div class="ui-displayWeather hidden">
+
+                <!-- City and Country Icon -->
+                <div class="city">
+                    <p data-cityName></p>
+                    <img data-countryImage>
+                </div>
+
+                <p data-weatherDesc></p>
+
+                <img data-weatherIcon>
+
+                <p data-temp></p>
+
+                <div class="parameter-container">
+
+                    <!-- Card-1 -->
+                    <div class="parameter">
+                        <img src="/assets/wind.png" loading="lazy">
+                        <p>Windspeed</p>
+                        <p data-windSpeed></p>
+                    </div>
+                    
+                    <!-- Card-2 -->
+                    <div class="parameter">
+                        <img src="/assets/humidity.png" loading="lazy">
+                        <p>Humidity</p>
+                        <p data-humidity></p>
+                    </div>
+                    
+                    <!-- Card-3 -->
+                    <div class="parameter">
+                        <img src="/assets/cloud.png" loading="lazy">
+                        <p>Clouds</p>
+                        <p data-clouds></p>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
